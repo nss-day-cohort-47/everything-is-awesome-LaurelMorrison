@@ -21,6 +21,7 @@ navElement.addEventListener("click", (event) => {
 	}
 })
 
+
 const filterLegos = (whatFilter) => {
 	const filterArray = useLegos().filter(singleLego => {
 		if (singleLego.LegoName.includes(whatFilter)) {
@@ -31,17 +32,45 @@ const filterLegos = (whatFilter) => {
 }
 
 const showdropDownNav = () => {
-	const dropDownElement = document.querySelector(".dropdown");
+	const dropDownElement = document.querySelector('.dropdown');
 	dropDownElement.innerHTML = dropDownNav();
+}
+
+
+navElement.addEventListener("change", (event) => {
+	console.log(event);
+	const material = event.target.value
+	console.log(material);
+	if (material !== "0") {
+		filterLegoMaterial(material)
+	} else {
+		makeLegoList(useLegos())
 	}
+
+	// } else if (event.target.id.startsWith("show")) { 
+	// 	const color = event.target.id.split("show")[1]
+	// 	filterLegos(color)
+	// }
+})
+
+const filterLegoMaterial = (whatMaterial) => {
+	console.log(useLegos());
+	const filterArray = useLegos().filter(singleLego => {
+		if (singleLego.Material.includes(whatMaterial)) {
+			return singleLego;
+		}
+	})
+	makeLegoList(filterArray);
+}
+
 
 
 const startEIA = () => {
-	loadLegos()
-	.then(legoArray => {
-		makeLegoList(legoArray)
-	})
 	showdropDownNav();
+	loadLegos()
+		.then(legoArray => {
+			makeLegoList(legoArray)
+		})
 }
 
 startEIA();
