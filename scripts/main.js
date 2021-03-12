@@ -39,18 +39,12 @@ const showdropDownNav = () => {
 
 navElement.addEventListener("change", (event) => {
 	console.log(event);
-	const material = event.target.value
-	console.log(material);
-	if (material !== "0") {
-		filterLegoMaterial(material)
+	const materialSort = event.target.value
+	if (materialSort !== "dropdown"){
+		filterLegoMaterial(materialSort)
 	} else {
 		makeLegoList(useLegos())
 	}
-
-	// } else if (event.target.id.startsWith("show")) { 
-	// 	const color = event.target.id.split("show")[1]
-	// 	filterLegos(color)
-	// }
 })
 
 const filterLegoMaterial = (whatMaterial) => {
