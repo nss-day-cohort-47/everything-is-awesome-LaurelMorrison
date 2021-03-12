@@ -68,3 +68,28 @@ const startEIA = () => {
 }
 
 startEIA();
+
+navElement.addEventListener("keyup", (event) => {
+	if (event.key === "Enter"){
+		if (event.target.id === 'search'){
+			searchBar();
+		}
+	}
+})
+
+function searchBar() {
+	const legoID = document.getElementById('search').value
+	console.log("legoID", legoID)
+	const legoIDSearch = useLegos().filter(singleLego => {
+		if (singleLego.LegoId ===  legoID){
+			return singleLego;
+		}
+	})
+	if (legoIDSearch.length === 0){
+		document.getElementById("all-legos").innerHTML = `<h3> We couldn\'t find that Lego ID </h3>`
+		}
+
+	else { makeLegoList(legoIDSearch)
+	}
+
+}
