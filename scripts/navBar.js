@@ -1,5 +1,6 @@
 export const dropDownNav = () => {
     return`
+                <option value="">Material</option>
                 <option value="Solid">Solid</option>
                 <option value="Transparent">Transparent</option>
                 <option value="Pearl">Pearl</option>
