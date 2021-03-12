@@ -1,21 +1,19 @@
 export const dropDownNav = () => {
     return
-    `<div id="dropdown">
-        <button class="dropbtn">Select Material
-        <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="${brick.Material}">Solid</a>
-            <a href="${brick.Material}">Transparent</a>
-            <a href="${brick.Material}">Pearl</a>
-            <a href="${brick.Material}">Chrome</a>
-            <a href="${brick.Material}">Metallic</a>
-            <a href="${brick.Material}">Milky</a>
-            <a href="${brick.Material}">Glitter</a>
-            <a href="${brick.Material}">Speckle</a>
-            <a href="${brick.Material}">Ink</a>
-            <a href="${brick.Material}">Process</a>
-            <a href="${brick.Material}">Modulex</a>
+    `<div class="dropdown">
+        <select name= "materials" id ="materials">
+            <option value="Solid">Solid</option>
+            <option value="Transparent">Transparent</option>
+            <option value="Pearl">Pearl</option>
+            <option value="Chrome">Chrome</option>
+            <option value="Metallic">Metallic</option>
+            <option value="Milky">Milky</option>
+            <option value="Glitter">Glitter</option>
+            <option value="Speckle">Speckle</option>
+            <option value="Ink">Ink</option>
+            <option value="Process">Process</option>
+            <option value="Modulex">Modulex</option>
+        </select>
         </div>
   `
 }
