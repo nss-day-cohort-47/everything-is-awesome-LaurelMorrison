@@ -86,10 +86,15 @@ function searchBar() {
 		}
 	})
 	if (legoIDSearch.length === 0){
-		document.getElementById("all-legos").innerHTML = `<h3> We couldn\'t find that Lego ID </h3>`
+		document.getElementById("all-legos").innerHTML = `<h3> We couldn\'t find a ${legoID} lego ID. </h3>`
 		}
 
 	else { makeLegoList(legoIDSearch)
 	}
 
 }
+
+
+// LegoColorss.sort(function(a,b){
+// 	return new Date(b.YearFrom) - new Date(a.YearFrom);
+//   });
